@@ -187,6 +187,11 @@ curl -X GET "https://h1appstore.hancom-toki.com:9443/api/toki/distributors/{dist
   "serial": "토키 시리얼 넘버"
 }
 ```
+
+```shell script
+curl -X POST "https://h1appstore.hancom-toki.com:9443/api/toki/orders" -H "accept: */*" -H "Content-Type: application/json" -d "{\"buyerName\":\"구매자 이름\",\"buyerTel\":\"구매자 연락처\",\"approvalDTO\":[{\"distributorId\":1,\"productId\":123},{\"distributorId\":1,\"productId\":124},{\"distributorId\":1,\"productId\":125},{\"distributorId\":1,\"productId\":126}],\"serial\":\"토키 시리얼 넘버\"}"
+```
+
 UI 상에서 입력받은 구매자 이름과 연락처를 넣어야 합니다.  
 `buyerTel`에 입력된 번호로 결제 요청 문자가 발송됩니다.  
 `approvalDTO`는 배열로, 구매할 상품이 한개일지라도 배열 안에 표기해야 합니다.  
